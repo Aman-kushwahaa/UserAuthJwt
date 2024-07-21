@@ -13,7 +13,6 @@ public class User {
 
     private String username;
     private String password;
-    private String roles;
 
     public String getName() {
         return username;
@@ -24,17 +23,6 @@ public class User {
     }
 
 
-    public User(String name, String password) {
-        this.username = name;
-        this.password = password;
 
-    }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
 }
