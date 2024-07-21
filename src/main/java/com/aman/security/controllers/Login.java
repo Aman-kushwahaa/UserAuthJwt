@@ -40,7 +40,7 @@ public class Login {
     @PostMapping("/login")
     public ResponseEntity<JwtResponse> login(@RequestBody JwtRequest request) {
 
-        this.doAuthenticate(request.getUsername(),passwordEncoder.encode( request.getPassword()));
+        this.doAuthenticate(request.getUsername(),request.getPassword());
 
 
         UserDetails userDetails = userDetailsService.loadUserByUsername(request.getUsername());
@@ -54,6 +54,7 @@ public class Login {
     }
 
     private void doAuthenticate(String username, String password) {
+
 
         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(username, password);
         try {
